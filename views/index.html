@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/views/style.css" />
+    <title>My sample JSON data</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <h1>My first heading</h1>
+        <table>
+          <thead>
+            <th>title</th>
+            <th class="table-body">body</th>
+          </thead>
+          <tbody id="sample-table-data">
+            <% blogs.forEach(blog => { %>
+            <tr>
+              <td>
+                <a href="/blogs/<%= blog.id %>"> <%= blog.title %> </a>
+              </td>
+              <td class="table-body"><%= blog.body %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+
+        <!-- Creating a form -->
+        <form action="/blogs" method="post">
+          <input type="text" name="title" placeholder="Blog title" />
+          <textarea
+            name="body"
+            id="blog-body"
+            cols="30"
+            rows="10"
+            placeholder="Blog body"
+          ></textarea>
+          <button type="submit">Create a new blog</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+
+### Blog Router
+GET http://localhost:8000/blogs
+
+
+
+
+### Individual Blog Router
+GET http://localhost:8000/blogs/1
+
+
+
+### Editing an existing blog
+PUT http://localhost:8000/blogs/1
+Content-Type: application/x-www-form-urlencoded
+
+{
+    "title": "Title 1",
+    "body": "1",
+}
